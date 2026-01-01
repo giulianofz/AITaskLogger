@@ -5,7 +5,6 @@ import java.io.IOException;
 
 public class FileManager {
 
-        //privado para que nadie pueda cambiar 
     private String filePath;
 
     // define como se llamará el archivo
@@ -15,14 +14,12 @@ public class FileManager {
 
     public void saveTask(String content) {
         try {
-                         //append: True 
+            //append: True 
             FileWriter writer = new FileWriter(this.filePath, true);
-            writer.write("\n==== LISTA DE TAREAS =====\n");
-           // writer.write("\n==== TAREAS =====\n");
-            writer.write(content);
+
+            writer.write("\n" + "\n" + content);
 
             writer.close();
-
         } catch (IOException e) {
             System.out.println("Error al escribir el archivo: " + e.getMessage());
         }
